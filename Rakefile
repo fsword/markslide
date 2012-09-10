@@ -20,8 +20,16 @@ task :pkg => :generate do
       $1
     end
   end.uniq.compact
+
   sources << 'index.html'
-  `tar cvz -f slide.tgz #{sources.join ' '}`
+  
+  require 'zip/zip'
+  Zip::ZipFile.open('slide.zip', Zip::ZipFile::CREATE) do |zipfile|
+    sources.each do |filename|
+      zipfile.add(filename, filename)
+    end
+  end
+
 end
 
 task :environments do

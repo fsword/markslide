@@ -6,4 +6,4 @@ gem 'pry-nav'
 gem 'guard'
 gem 'guard-shell'
 gem 'rake'
-
+gem 'rubyzip'
