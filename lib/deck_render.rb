@@ -18,6 +18,10 @@ class DeckRender < Redcarpet::Render::HTML
     wrap 'pre', value
   end
 
+  def block_quote value
+    wrap 'blockquote', value
+  end
+
   def wrap tag, text
     if text =~ /^:.+/
       "<#{tag} class=\"slide\">#{text[1..-1]}</#{tag}>\n"
@@ -27,14 +31,5 @@ class DeckRender < Redcarpet::Render::HTML
       "<#{tag}>#{text}</#{tag}>\n"
     end
   end
-
-# 类库会自动添加 p 标签，因此不使用这个特性
-#   def block_quote value
-#     if value =~ /^:.+/
-#       "<blockquote class=\"slide\">#{value[1..-1]}</blockquote>"
-#     else
-#       "<blockquote>#{value}</blockquote>"
-#     end
-#   end
 
 end
