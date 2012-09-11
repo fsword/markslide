@@ -24,6 +24,7 @@ task :pkg => :generate do
   sources << 'index.html'
   
   require 'zip/zip'
+  File.delete 'slide.zip' rescue nil
   Zip::ZipFile.open('slide.zip', Zip::ZipFile::CREATE) do |zipfile|
     sources.each do |filename|
       zipfile.add(filename, filename)
