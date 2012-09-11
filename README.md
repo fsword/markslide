@@ -2,8 +2,7 @@ Build your slides by markdown!
 ------------------------------
 
 # Introduce
-I'm very exiting about [deck.js](https://github.com/imakewebthings/deck.js) project. But it is still hard to edit html file.   
-I used zen-coding to save my time, but it is still indirectly. Then I found markdown. So I want to combine the two things.
+I'm very excited about [deck.js](https://github.com/imakewebthings/deck.js) project. But editing html directly isn't that handy. I tried zen-coding to save some time. Still, it's not intuitive enough. Then markdown came to me. So here's these two lovely things combined.
 
 # Usage
 * fork this project as your own  
