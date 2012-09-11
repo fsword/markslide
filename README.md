@@ -24,3 +24,28 @@ rake pkg
 ```
 guard
 ```
+
+# Markup
+* H1, H2 will be surrounded by section which class is slide, such as:  
+```
+# First Head
+## Second Head
+```  
+will be    
+```
+<section class="slide">
+<h1>First Head</h1>
+</section>
+<section class="slide">
+<h2>Second Head</h2>
+</section>
+```
+* Every content that begin with ':' will be set slide class, such as:  
+```
+* :hello
+```  
+will be  
+```
+<li class="slide">hello
+</li>
+```
