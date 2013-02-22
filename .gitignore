@@ -4,4 +4,4 @@
 *.swp
 *.html
 *.zip
-*.sublime-workspace
+*.sublime*
