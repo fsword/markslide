@@ -10,6 +10,7 @@ task :generate => :environments do
   end
 end
 
+desc "package content with resource files"
 task :pkg => :generate do
   sources = File.readlines('index.html').map do |line|
     if line.chomp =~ /<link.+href=\"(.+)\">/
