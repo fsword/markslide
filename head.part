@@ -26,6 +26,10 @@
 	
 	<!-- Required Modernizr file -->
 	<script src="deck.js/modernizr.custom.js"></script>
+
+	<style type="text/css">
+	.deck-container { font-size: 30px; } /* optimize the font display in 1366x768 computer */
+	</style>
 </head>
 <body class="deck-container">
 
