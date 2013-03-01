@@ -47,6 +47,16 @@
 	$(function() {
 		$.deck('.slide');
 	});
+  $(document).keydown(function(e){
+    if (e.keyCode == 80) { //press 'p': comments tanggle
+      if($("code.comment").css("display")=="none"){
+        $("code.comment").css("display","inline");
+      }else{
+        $("code.comment").css("display","none");
+      }
+      return false;
+    }
+  });
 </script>
 </body>
 </html>

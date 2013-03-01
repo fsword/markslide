@@ -32,4 +32,12 @@ class DeckRender < Redcarpet::Render::HTML
     end
   end
 
+  def codespan line
+    if line =~ /^!(.+)/
+      %Q|<code class="comment">#{$1}</code>|
+    else
+      "<code>#{line}</code>"
+    end
+  end
+
 end
