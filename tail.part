@@ -50,7 +50,7 @@
   $(document).keydown(function(e){
     if (e.keyCode == 80) { //press 'p': comments tanggle
       if($("code.comment").css("display")=="none"){
-        $("code.comment").css("display","inline");
+        $("code.comment").css("display","block");
       }else{
         $("code.comment").css("display","none");
       }
