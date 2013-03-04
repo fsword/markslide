@@ -2,12 +2,22 @@ desc "render content to a single html file"
 task :generate => :environments do
   head = File.read('head.part')
   tail = File.read('tail.part')
-  content = @markdown.render File.read('index.md')
+  markdown = File.read 'index.md'
+  content = @markdown.render markdown
+  File.open('all.html', 'w') do |f|
+    f.write head
+    f.write content[10..-1]
+    f.write tail
+  end
+
+  cleaned_markdown = markdown.split(/\n/).select{|s| s !~ /^`!/}.join("\n")
+  content = @markdown.render cleaned_markdown
   File.open('index.html', 'w') do |f|
     f.write head
     f.write content[10..-1]
     f.write tail
   end
+
 end
 
 desc "package content with resource files"

@@ -44,19 +44,32 @@
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-	$(function() {
-		$.deck('.slide');
-	});
-  $(document).keydown(function(e){
-    if (e.keyCode == 80) { //press 'p': comments tanggle
-      if($("code.comment").css("display")=="none"){
-        $("code.comment").css("display","block");
-      }else{
-        $("code.comment").css("display","none");
+  $(function() {
+    $.deck('.slide');
+    $(document).keydown(function(e){
+      if (e.keyCode == 80) { //press 'p': comments tanggle
+        if($("code.comment").css("display")=="none"){
+          $("code.comment").css("display","block");
+        }else{
+          $("code.comment").css("display","none");
+        }
+        return false;
+      } else if (e.keyCode == 81){
+        window.open("all.html");
       }
-      return false;
-    }
+    });
   });
+
+  function go_to(index){
+    $.deck('go',index);
+  }
+
+  if(opener){
+    $(document).bind('deck.change', function(event, from, to) {
+        if(opener) opener.go_to(to);
+      }
+    );
+  }
 </script>
 </body>
 </html>
