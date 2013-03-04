@@ -22,7 +22,7 @@ rake generate #will be generated on the project folder
 ```
 
 * Open it by your favourite browser
-* You can run this command to pkg your slide resource as slide.zip
+* You can run this command to pkg your slide resource as <git branche name>.zip
 
 ```
 rake pkg
@@ -64,3 +64,13 @@ will become
 <li class="slide">hello
 </li>
 ```
+
+* Comment can be show/hide by press 'p'. You can put '!' on the front of code section to indicate comments, such as:
+
+```markdown
+`!comment`
+```
+
+will become
+```html
+<code class="comment">comment</code>

@@ -10,6 +10,7 @@ task :generate => :environments do
   end
 end
 
+desc "package content with resource files"
 task :pkg => :generate do
   sources = File.readlines('index.html').map do |line|
     if line.chomp =~ /<link.+href=\"(.+)\">/
@@ -24,8 +25,11 @@ task :pkg => :generate do
   sources << 'index.html'
   
   require 'zip/zip'
-  File.delete 'slide.zip' rescue nil
-  Zip::ZipFile.open('slide.zip', Zip::ZipFile::CREATE) do |zipfile|
+  branch_name = `git branch`.split(/\n/).select{|s| s =~ /^\*/ }[0][2..-1]
+  file = "#{branch_name || 'slide'}.zip"
+  puts file
+  File.delete file rescue nil
+  Zip::ZipFile.open(file, Zip::ZipFile::CREATE) do |zipfile|
     sources.each do |filename|
       zipfile.add(filename, filename)
     end

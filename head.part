@@ -23,7 +23,9 @@
 	
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="deck.js/themes/transition/fade.css">
-	
+  <style type="text/css">
+    code.comment { display: none; }
+  </style>
 	<!-- Required Modernizr file -->
 	<script src="deck.js/modernizr.custom.js"></script>
 
