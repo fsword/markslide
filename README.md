@@ -35,6 +35,7 @@ guard
 ```
 
 ## Markup
+* Encode: UTF-8 is the only supported encoding.
 * H1, H2 will be surrounded by section which class is slide, such as:
 
 ```markdown

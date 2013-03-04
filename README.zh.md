@@ -35,6 +35,7 @@ guard
 ```
 
 ## 标记说明
+* 目前仅支持 UTF-8 编码，请注意在编辑器中保存 index.md 时的编码方式
 * H1, H2 标记将会变成section，例如:
 
 ```markdown
