@@ -44,19 +44,45 @@
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-	$(function() {
-		$.deck('.slide');
-	});
-  $(document).keydown(function(e){
-    if (e.keyCode == 80) { //press 'p': comments tanggle
-      if($("code.comment").css("display")=="none"){
-        $("code.comment").css("display","block");
-      }else{
-        $("code.comment").css("display","none");
+  $(function() {
+    $.deck('.slide');
+    $(document).keydown(function(e){
+      if (e.keyCode == 80) { //press 'p': comments tanggle
+        if($("code.comment").css("display")=="none"){
+          $("code.comment").css("display","block");
+        }else{
+          $("code.comment").css("display","none");
+        }
+        return false;
+      } else if (e.keyCode == 81){//press 'q': open 'all' page with comments
+        window.open("all.html");
       }
-      return false;
-    }
+    });
+    window.addEventListener('message', receiver, false);
+    function receiver (event) {
+      var data = event.data;
+      if(data instanceof Object){
+        switch(data['method']){
+          case "go": {
+            $.deck('go', data['index'] || 0);
+          }
+          default: {}
+        }
+      }
+    };
+
   });
+
+  function go_to(index){
+    $.deck('go',index);
+  }
+
+  if(opener){
+    $(document).bind('deck.change', function(event, from, to) {
+        opener.postMessage({'method':'go','index':to},'*');
+      }
+    );
+  }
 </script>
 </body>
 </html>
