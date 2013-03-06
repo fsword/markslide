@@ -22,8 +22,9 @@ rake generate #will be generated on the project folder
 ```
 
 * 现在就可以在浏览器中观看了
-* 另外，你还可以执行下面的命令将slides打包为一个zip文件，文件名称为 <git branche name>.zip
 
+## 特殊功能
+* 用户可以执行下面的命令将slides打包为一个zip文件，文件名称为 <git branche name>.zip
 ```
 rake pkg
 ```
@@ -33,6 +34,12 @@ rake pkg
 ```
 guard
 ```
+
+* 支持演示者视图。Markslide可以生成打开两个窗口进行联动，其中一个作为“演示者视图”。
+    使用时，首先在浏览器中打开index.html。
+    在键盘上输入字母'q'，浏览器将打开辅助显示页面（新窗口打开时可能被浏览器拦截）
+    辅助页面是all.html，其中包括了所有的comments，用户可以将两个窗口放在两个显示屏上
+    操作辅助页面将同时让主页面联动，反之则不会
 
 ## 标记说明
 * 目前仅支持 UTF-8 编码，请注意在编辑器中保存 index.md 时的编码方式

@@ -22,6 +22,8 @@ rake generate #will be generated on the project folder
 ```
 
 * Open it by your favourite browser
+
+## Special Usage
 * You can run this command to pkg your slide resource as <git branche name>.zip
 
 ```
@@ -33,6 +35,10 @@ rake pkg
 ```
 guard
 ```
+* Presenter view. Markslide could use two window for both presenter and audience.
+    open index.html in your browser, it is called 'main view'
+    press 'q' on the keyboard, then browser will open presenter view
+    any slide change event of presenter view will be copy to main view
 
 ## Markup
 * Encode: UTF-8 is the only supported encoding.
