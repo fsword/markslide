@@ -58,6 +58,19 @@
         window.open("all.html");
       }
     });
+    window.addEventListener('message', receiver, false);
+    function receiver (event) {
+      var data = event.data;
+      if(data instanceof Object){
+        switch(data['method']){
+          case "go": {
+            $.deck('go', data['index'] || 0);
+          }
+          default: {}
+        }
+      }
+    };
+
   });
 
   function go_to(index){
@@ -66,7 +79,7 @@
 
   if(opener){
     $(document).bind('deck.change', function(event, from, to) {
-        if(opener) opener.go_to(to);
+        opener.postMessage({'method':'go','index':to},'*');
       }
     );
   }
