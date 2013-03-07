@@ -45,6 +45,10 @@ task :pkg => :generate do
   File.delete file rescue nil
   Zip::ZipFile.open(file, Zip::ZipFile::CREATE) do |zipfile|
     sources.each do |filename|
+      if filename =~ /^\.\//
+        filename = filename[2..-1]
+      end
+      puts "source: #{filename}"
       zipfile.add(filename, filename)
     end
   end
