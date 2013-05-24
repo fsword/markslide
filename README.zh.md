@@ -16,6 +16,7 @@
 git clone git://github.com/fsword/markslide.git
 cd markslide
 git submodule update --init --recursive
+bundle install
 ```
 
 * 在项目根目录下创建一个你的slide文件，名字必须是 index.md ，内容就是你的slides

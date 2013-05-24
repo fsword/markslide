@@ -15,6 +15,7 @@ The code is compatible with ruby 1.9/2.0.
 git clone git://github.com/fsword/markslide.git
 cd markslide
 git submodule update --init --recursive
+bundle install
 ```
 
 * create your slide named index.md ( on project )
