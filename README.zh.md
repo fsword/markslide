@@ -4,6 +4,10 @@
 ## 为什么用markdown？
 我很喜欢用[deck.js](https://github.com/imakewebthings/deck.js)编写slides，但是手工书写html还是很麻烦，虽然有zen-coding这样的工具，作为markdown的爱好者，我写了这个小工具把它们结合起来使用。
 
+## 兼容性
+
+本项目的代码兼容ruby1.9/2.0
+
 ## 用法
 * 这个项目是一个模板，所以你需要首先fork这个项目
 * clone你自己的项目，像这样：

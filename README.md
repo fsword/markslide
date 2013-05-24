@@ -4,6 +4,9 @@ Build your slides by markdown!
 ## Why markslide
 I'm very excited about [deck.js](https://github.com/imakewebthings/deck.js) project. But editing html directly isn't that handy. I tried zen-coding to save some time. Still, it's not intuitive enough. Then markdown came to me. So here's these two lovely things combined.
 
+## Compatible
+The code is compatible with ruby 1.9/2.0.  
+
 ## Usage
 * fork this project as your own
 * clone your project
