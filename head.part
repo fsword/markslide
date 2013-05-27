@@ -29,9 +29,8 @@
       position: absolute;
       color: green;
       z-index: 3;
-      font-size: 0.7em;
       top: 2%;
-      right: 0%;
+      right: 2%;
       margin-top: -16px;
       vertical-align: middle;
       text-align: center;

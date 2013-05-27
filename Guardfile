@@ -1,5 +1,6 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 guard :shell do
-  watch(/.+/) { `rake generate` }
+  watch(/.+md/) { `rake generate` }
+  watch(/.+part/) { `rake generate` }
 end
