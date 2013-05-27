@@ -25,14 +25,41 @@
 	<link rel="stylesheet" href="deck.js/themes/transition/fade.css">
   <style type="text/css">
     code.comment { display: none; }
+    .timer {
+      position: absolute;
+      color: green;
+      z-index: 3;
+      font-size: 0.7em;
+      top: 2%;
+      right: 0%;
+      margin-top: -16px;
+      vertical-align: middle;
+      text-align: center;
+    }
   </style>
 	<!-- Required Modernizr file -->
 	<script src="deck.js/modernizr.custom.js"></script>
 
 	<style type="text/css">
 	.deck-container { font-size: 30px; } /* optimize the font display in 1366x768 computer */
-	</style>
+  </style>
+  <script type="text/javascript">
+    function start_timer(){
+      document.start = new Date();
+      document.total = prompt("输入计划时间","45");
+      var trigger = function(){
+        var min = document.total - Math.floor(((new Date().getTime()) - document.start.getTime())/60000);
+        document.getElementById('timer').innerHTML = '还剩'+min+'分钟';
+      };
+      trigger();
+      setInterval(trigger,30000);
+      document.getElementById('timer_trigger').style.display = "none";
+    }
+  </script>
 </head>
 <body class="deck-container">
-
+  <div class="timer">
+    <a id="timer_trigger" href="javascript:start_timer();void(0);">开始</a>
+    <span id="timer"></span>
+  </div>
 <!-- Begin slides. Just make elements with a class of slide. -->
